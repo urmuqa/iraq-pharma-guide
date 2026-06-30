@@ -1,197 +1,175 @@
+﻿'use strict';
 /* ================================================================
-   Iraq Pharma Guide — JavaScript
-   Handles: sticky header, mobile nav, scroll reveal, counter anim,
-            scroll-to-top, smooth nav, active link highlight
+   Iraq Pharma Guide — Mobile-First JavaScript
+   Features: sticky header, menu, scroll reveal, counters,
+             feat dots, testi swipe+dots, scroll-to-top, sticky bar
    ================================================================ */
 
-'use strict';
+const $ = (s, c=document) => c.querySelector(s);
+const $$ = (s, c=document) => [...c.querySelectorAll(s)];
 
-/* ── DOM Helpers ── */
-const $  = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
-
-/* ══════════════════════════════════
-   1. STICKY HEADER — adds .scrolled class on scroll
-══════════════════════════════════ */
-(function initStickyHeader() {
-  const header = $('#header');
-  if (!header) return;
-
-  const onScroll = () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-  };
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // run on load
+/* 1. HEADER SCROLL */
+(function(){
+  const h = $('#header');
+  if(!h) return;
+  const fn = () => h.classList.toggle('scrolled', window.scrollY > 30);
+  window.addEventListener('scroll', fn, {passive:true});
+  fn();
 })();
 
-/* ══════════════════════════════════
-   2. MOBILE NAV — hamburger toggle
-══════════════════════════════════ */
-(function initMobileNav() {
-  const hamburger = $('#hamburger');
-  const mobileNav = $('#mobileNav');
-  if (!hamburger || !mobileNav) return;
+/* 2. MENU TOGGLE */
+(function(){
+  const btn = $('#menuBtn');
+  const nav = $('#dropMenu');
+  if(!btn || !nav) return;
 
-  const toggle = (force) => {
-    const open = force !== undefined ? force : !hamburger.classList.contains('open');
-    hamburger.classList.toggle('open', open);
-    mobileNav.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', open);
-    document.body.style.overflow = open ? 'hidden' : '';
+  const close = () => {
+    btn.classList.remove('open');
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  };
+  const open = () => {
+    btn.classList.add('open');
+    nav.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
   };
 
-  hamburger.addEventListener('click', () => toggle());
-
-  // Close on nav link click
-  $$('a', mobileNav).forEach(a => {
-    a.addEventListener('click', () => toggle(false));
-  });
-
-  // Close on outside click
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
-      toggle(false);
-    }
-  });
-
-  // Close on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') toggle(false);
-  });
-})();
-
-/* ══════════════════════════════════
-   3. SCROLL REVEAL — Intersection Observer
-══════════════════════════════════ */
-(function initScrollReveal() {
-  const items = $$('.reveal');
-  if (!items.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  btn.addEventListener('click', () =>
+    btn.classList.contains('open') ? close() : open()
   );
 
-  items.forEach(item => observer.observe(item));
+  $$('.drop-link').forEach(a => a.addEventListener('click', close));
+  document.addEventListener('click', e => {
+    if(!btn.contains(e.target) && !nav.contains(e.target)) close();
+  });
+  document.addEventListener('keydown', e => e.key==='Escape' && close());
 })();
 
-/* ══════════════════════════════════
-   4. ANIMATED COUNTERS — triggers when .trust section enters view
-══════════════════════════════════ */
-(function initCounters() {
-  const counters = $$('[data-count]');
-  if (!counters.length) return;
+/* 3. SCROLL REVEAL */
+(function(){
+  const items = $$('.reveal');
+  if(!items.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, {threshold:0.1, rootMargin:'0px 0px -30px 0px'});
+  items.forEach(el => obs.observe(el));
+})();
 
-  const easeOut = t => 1 - Math.pow(1 - t, 3);
-
-  const animateCounter = (el) => {
-    const target   = parseFloat(el.dataset.count);
-    const suffix   = el.dataset.suffix || '';
-    const prefix   = el.dataset.prefix || '';
-    const duration = 1800; // ms
-    let startTime  = null;
-
-    const step = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed  = timestamp - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const value    = easeOut(progress) * target;
-
-      const display = target % 1 === 0
-        ? Math.round(value).toLocaleString('ar-IQ')
-        : value.toFixed(1);
-
-      el.textContent = prefix + display + suffix;
-
-      if (progress < 1) requestAnimationFrame(step);
+/* 4. ANIMATED COUNTERS */
+(function(){
+  const els = $$('[data-count]');
+  if(!els.length) return;
+  const easeOut = t => 1 - Math.pow(1-t, 3);
+  const run = el => {
+    const target = parseFloat(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    const dur = 1600; let start = null;
+    const step = ts => {
+      if(!start) start = ts;
+      const p = Math.min((ts-start)/dur, 1);
+      const v = easeOut(p)*target;
+      el.textContent = (target%1===0 ? Math.round(v).toLocaleString('ar-IQ') : v.toFixed(1)) + suffix;
+      if(p<1) requestAnimationFrame(step);
     };
-
     requestAnimationFrame(step);
   };
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  counters.forEach(el => observer.observe(el));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ run(e.target); obs.unobserve(e.target); } });
+  }, {threshold:0.5});
+  els.forEach(el => obs.observe(el));
 })();
 
-/* ══════════════════════════════════
-   5. SCROLL TO TOP BUTTON
-══════════════════════════════════ */
-(function initScrollTop() {
-  const btn = $('#scrollTop');
-  if (!btn) return;
+/* 5. FEATURES TRACK DOTS */
+(function(){
+  const track = $('#featTrack');
+  const dots = $$('.fdot');
+  if(!track || !dots.length) return;
+  const cards = $$('.feat-card', track);
+  if(!cards.length) return;
 
-  const toggle = () => btn.classList.toggle('visible', window.scrollY > 400);
-  window.addEventListener('scroll', toggle, { passive: true });
-
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  track.addEventListener('scroll', () => {
+    const idx = Math.round(track.scrollLeft / (cards[0].offsetWidth + 14));
+    dots.forEach((d,i) => d.classList.toggle('active', i===idx));
+  }, {passive:true});
 })();
 
-/* ══════════════════════════════════
-   6. ACTIVE NAV LINK HIGHLIGHT on scroll
-══════════════════════════════════ */
-(function initActiveNav() {
-  const sections = $$('section[id]');
-  const navLinks = $$('#header .nav-links a[href^="#"]');
-  if (!sections.length || !navLinks.length) return;
+/* 6. TESTIMONIALS SWIPE + DOTS */
+(function(){
+  const slider = $('#testiSlider');
+  const dots = $$('.tdot');
+  if(!slider || !dots.length) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(a => a.classList.remove('active'));
-          const activeLink = navLinks.find(a => a.getAttribute('href') === `#${entry.target.id}`);
-          if (activeLink) activeLink.classList.add('active');
-        }
-      });
-    },
-    { rootMargin: '-40% 0px -55% 0px' }
-  );
+  // Update active dot on scroll
+  const updateDot = () => {
+    const cards = $$('.testi-card', slider);
+    if(!cards.length) return;
+    const idx = Math.round(slider.scrollLeft / (cards[0].offsetWidth + 14));
+    dots.forEach((d,i) => d.classList.toggle('active', i===idx));
+  };
+  slider.addEventListener('scroll', updateDot, {passive:true});
 
-  sections.forEach(sec => observer.observe(sec));
-})();
-
-/* ══════════════════════════════════
-   7. SMOOTH SCROLL for anchor links
-══════════════════════════════════ */
-(function initSmoothScroll() {
-  $$('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      const target = $(anchor.getAttribute('href'));
-      if (!target) return;
-      e.preventDefault();
-      const headerH = parseInt(getComputedStyle(document.documentElement)
-        .getPropertyValue('--header-h')) || 70;
-      const top = target.getBoundingClientRect().top + window.scrollY - headerH;
-      window.scrollTo({ top, behavior: 'smooth' });
+  // Click dot to scroll
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const i = parseInt(dot.dataset.i);
+      const cards = $$('.testi-card', slider);
+      if(!cards[i]) return;
+      slider.scrollTo({left: cards[i].offsetLeft - 20, behavior:'smooth'});
     });
   });
+
+  // Touch swipe support
+  let startX = 0, scrollStart = 0;
+  slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    scrollStart = slider.scrollLeft;
+  }, {passive:true});
+  slider.addEventListener('touchmove', e => {
+    const dx = startX - e.touches[0].clientX;
+    slider.scrollLeft = scrollStart + dx;
+  }, {passive:true});
 })();
 
-/* ══════════════════════════════════
-   8. YEAR — inject current year into footer copyright
-══════════════════════════════════ */
-(function injectYear() {
-  const el = $('#currentYear');
-  if (el) el.textContent = new Date().getFullYear();
+/* 7. STICKY BAR — hide when download section is visible */
+(function(){
+  const bar = $('#stickyBar');
+  const dl = $('#download');
+  if(!bar || !dl) return;
+  const obs = new IntersectionObserver(entries => {
+    bar.classList.toggle('hide', entries[0].isIntersecting);
+  }, {threshold:0.3});
+  obs.observe(dl);
+})();
+
+/* 8. SCROLL TO TOP */
+(function(){
+  const btn = $('#scrollTop');
+  if(!btn) return;
+  window.addEventListener('scroll', () =>
+    btn.classList.toggle('visible', window.scrollY > 500), {passive:true}
+  );
+  btn.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+})();
+
+/* 9. YEAR */
+(function(){
+  const el = $('#yr');
+  if(el) el.textContent = new Date().getFullYear();
+})();
+
+/* 10. SMOOTH SCROLL for anchor links */
+(function(){
+  $$('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = $(a.getAttribute('href'));
+      if(!t) return;
+      e.preventDefault();
+      const hh = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hh')) || 58;
+      window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - hh, behavior:'smooth'});
+    });
+  });
 })();
