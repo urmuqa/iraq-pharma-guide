@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ── -->
+  <title>دليل الصيدلة العراقي — المرجع الصيدلاني الموثوق للصيادلة في العراق</title>
+  <meta name="description" content="دليل الصيدلة العراقي: تطبيق احترافي شامل للصيادلة في العراق. دليل OTC مبني على الأدلة العلمية، أدوات طبية سريعة، ودليل الأسعار التجارية." />
+  <meta name="keywords" content="صيدلة عراق، دليل الدواء، تطبيق صيدلي، OTC، أدوية العراق، فارماسيست" />
+  <meta name="author" content="Iraq Pharma Guide" />
+  <meta name="theme-color" content="#1D8478" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="دليل الصيدلة العراقي" />
+  <meta property="og:description" content="المرجع الصيدلاني الموثوق للصيادلة في العراق — OTC، أدوات طبية، وأسعار تجارية." />
+  <meta property="og:image" content="https://placehold.co/1200x630/1D8478/FFFFFF?text=Iraq+Pharma+Guide" />
+  <meta property="og:url" content="https://iraqpharmaguide.com" />
+
+  <!-- ── Favicon placeholder ── -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D8478'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-size='18' fill='white'%3E💊%3C/text%3E%3C/svg%3E" />
+
+  <!-- ── Google Fonts: Cairo ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ── Stylesheet ── -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       STICKY HEADER
+  ══════════════════════════════════════ -->
+  <header id="header" role="banner">
+    <div class="container header-inner">
+
+      <!-- Logo (right side in RTL) -->
+      <a href="#" class="logo logo--img" aria-label="دليل الصيدلة العراقي - الصفحة الرئيسية">
+        <!--
+          ┌─────────────────────────────────────────────────────────┐
+          │  ضع ملف اللوجو في:                                      │
+          │  pharma-landing-page/assets/logo.png                    │
+          │  (اللوجو الأبيض يظهر مثالياً على خلفية التيل الداكن)   │
+          └─────────────────────────────────────────────────────────┘
+        -->
+        <img
+          src="assets/logo.png"
+          alt="دليل الصيدلة العراقي"
+          class="logo-img"
+          width="140"
+          height="44"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <!-- Fallback: يظهر إذا لم يُوجَد ملف اللوجو بعد -->
+        <div class="logo-fallback" style="display:none;">
+          <div class="logo-icon" aria-hidden="true">💊</div>
+          <div class="logo-text">
+            <span class="name-ar">دليل الصيدلة العراقي</span>
+            <span class="name-en">Iraq Pharma Guide</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation (left side in RTL) -->
+      <nav class="nav-links" aria-label="التنقل الرئيسي">
+        <a href="#hero"       id="nav-home">الرئيسية</a>
+        <a href="#features"   id="nav-features">المميزات</a>
+        <a href="#how-it-works" id="nav-how">كيف يعمل؟</a>
+        <a href="#trust"      id="nav-trust">آراء المستخدمين</a>
+        <a href="#footer"     id="nav-contact" class="nav-cta">تواصل معنا</a>
+      </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button
+        id="hamburger"
+        class="hamburger"
+        aria-label="فتح القائمة"
+        aria-expanded="false"
+        aria-controls="mobileNav"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobileNav" class="mobile-nav" aria-label="القائمة المحمولة">
+    <a href="#hero">🏠 الرئيسية</a>
+    <a href="#features">⭐ المميزات</a>
+    <a href="#how-it-works">🔧 كيف يعمل؟</a>
+    <a href="#trust">💬 آراء المستخدمين</a>
+    <a href="#footer">📩 تواصل معنا</a>
+  </nav>
+
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO SECTION
+    ══════════════════════════════════════ -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <div class="container hero-inner">
+
+        <!-- Text Column -->
+        <div class="hero-text">
+
+          <div class="hero-badge reveal">
+            <span class="dot"></span>
+            مرجع صيدلاني موثوق · العراق
+          </div>
+
+          <h1 class="hero-title reveal delay-1" id="hero-heading">
+            مرجعك الصيدلاني
+            <span class="highlight">الشامل والموثوق</span>
+            في متناول يدك
+          </h1>
+
+          <p class="hero-subtitle reveal delay-2">
+            تطبيق <strong>دليل الصيدلة العراقي</strong> هو الأداة الاحترافية الأولى من نوعها التي تمنح الصيادلة في العراق وصولاً فورياً إلى دليل الأدوية المبني على الأدلة العلمية، وتحديثات الأسعار التجارية، والأدوات الطبية السريعة — كل ذلك في مكانٍ واحد.
+          </p>
+
+          <!-- Download CTA Buttons -->
+          <div class="cta-group reveal delay-3">
+            <!-- ⬇ Replace href="#" with your actual Google Play link -->
+            <a href="#" id="cta-google-play" class="btn-store btn-store-primary" aria-label="حمّل التطبيق من Google Play">
+              <span class="btn-store-icon" aria-hidden="true">▶</span>
+              <span class="btn-store-text">
+                <small>احصل عليه من</small>
+                <strong>Google Play</strong>
+              </span>
+            </a>
+
+            <!-- ⬇ Replace href="#" with your actual App Store link -->
+            <a href="#" id="cta-app-store" class="btn-store btn-store-secondary" aria-label="حمّل التطبيق من App Store">
+              <span class="btn-store-icon" aria-hidden="true"></span>
+              <span class="btn-store-text">
+                <small>متوفر على</small>
+                <strong>App Store</strong>
+              </span>
+            </a>
+          </div>
+
+          <!-- Stats Row -->
+          <div class="hero-stats reveal delay-4" aria-label="إحصائيات التطبيق">
+            <div class="stat-item">
+              <span class="stat-number">+٥٠٠٠</span>
+              <span class="stat-label">صيدلاني يثق بنا</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">+٣٠٠٠</span>
+              <span class="stat-label">دواء موثّق</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">٤.٩ ⭐</span>
+              <span class="stat-label">تقييم المستخدمين</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Visual Column — Phone Mockup -->
+        <div class="hero-visual reveal delay-2">
+          <div class="phone-glow"></div>
+          <div class="phone-wrapper">
+
+            <!-- ── صورة التطبيق الحقيقية ────────────────────────────────────
+                 تم ربط الصورة بملف: assets/app-screenshot.png
+                 لتحديثها: ضع لقطة الشاشة في مجلد assets باسم app-screenshot.png
+                 ──────────────────────────────────────────────────────────── -->
+            <div class="phone-frame">
+              <img
+                src="assets/app-screenshot.png"
+                alt="لقطة شاشة حقيقية من تطبيق دليل الصيدلة العراقي تُظهر الأدوات السريعة وأدوية OTC"
+                class="app-screenshot-img"
+                width="290"
+                height="630"
+                loading="eager"
+                onerror="this.src='https://placehold.co/290x630/E3F4F2/1D8478?text=App+Screenshot'"
+              />
+            </div>
+
+            <!-- Floating badges on phone -->
+            <div class="phone-badge" aria-hidden="true">
+              <span class="badge-icon">✅</span>
+              <div class="phone-badge-text">
+                <strong>مراجعة طبية موثّقة</strong>
+                <span>محتوى علمي معتمد</span>
+              </div>
+            </div>
+
+            <div class="phone-badge-2" aria-hidden="true">
+              🔔 تحديث يومي للأسعار
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         FEATURES SECTION
+    ══════════════════════════════════════ -->
+    <section id="features" aria-labelledby="features-heading">
+      <div class="container">
+
+        <header class="features-header text-center reveal">
+          <div class="section-tag">✨ مميزات التطبيق</div>
+          <h2 class="section-title" id="features-heading">
+            كل ما يحتاجه الصيدلاني العراقي في مكانٍ واحد
+          </h2>
+          <p class="section-subtitle">
+            صُمِّم التطبيق خصيصاً لتلبية احتياجات الصيادلة في العراق، مع مراعاة الواقع المهني اليومي وصعوباته.
+          </p>
+        </header>
+
+        <div class="features-grid">
+
+          <!-- Card 1 -->
+          <article class="feature-card reveal delay-1" aria-label="دليل OTC مبني على الأدلة">
+            <div class="feature-icon-wrap" aria-hidden="true">
+              <span>🧪</span>
+            </div>
+            <h3>دليل OTC مبني على الأدلة العلمية</h3>
+            <p>
+              بروتوكولات صرف الأدوية بدون وصفة طبية (OTC) مستندة إلى أحدث الإرشادات السريرية العالمية، مُكيَّفة مع السياق الدوائي العراقي والمتوفر في الأسواق المحلية.
+            </p>
+            <span class="feature-tag">دليل إرشادي موثّق</span>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="feature-card reveal delay-2" aria-label="أدوات طبية سريعة">
+            <div class="feature-icon-wrap" aria-hidden="true">
+              <span>⚡</span>
+            </div>
+            <h3>أدوات طبية وحسابات سريعة</h3>
+            <p>
+              حاسبات جرعات فورية، مراجعة التفاعلات الدوائية، تعديل الجرعات لحالات القصور الكلوي والكبدي، وأدوات تقييم سريري شاملة — كلها في متناول إصبعك.
+            </p>
+            <span class="feature-tag">أدوات احترافية متكاملة</span>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="feature-card reveal delay-3" aria-label="دليل الأسعار التجارية">
+            <div class="feature-icon-wrap" aria-hidden="true">
+              <span>💰</span>
+            </div>
+            <h3>دليل الأسعار التجارية العراقية</h3>
+            <p>
+              قاعدة بيانات شاملة ومحدَّثة بانتظام لأسعار الأدوية في السوق العراقي، تشمل الأدوية الأصلية والبديلة، لمساعدتك على تقديم أفضل خيارات للمريض.
+            </p>
+            <span class="feature-tag">تحديث دوري مستمر</span>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="feature-card reveal delay-1" aria-label="مخزن البحث السريع">
+            <div class="feature-icon-wrap" aria-hidden="true">
+              <span>🔍</span>
+            </div>
+            <h3>بحث ذكي وفوري</h3>
+            <p>
+              محرك بحث متطور يدعم الاسم التجاري والمادة الفعّالة باللغتين العربية والإنجليزية، مع اقتراحات فورية وتصحيح تلقائي للأخطاء الإملائية.
+            </p>
+            <span class="feature-tag">بحث ذكي متعدد اللغات</span>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="feature-card reveal delay-2" aria-label="وضع العمل دون اتصال">
+            <div class="feature-icon-wrap" aria-hidden="true">
+              <span>📶</span>
+            </div>
+            <h3>يعمل بدون إنترنت</h3>
+            <p>
+              قاعدة البيانات الكاملة متاحة بدون اتصال بالإنترنت، مما يضمن عملك بكفاءة حتى في المناطق ذات الاتصال الضعيف أو في أوقات انقطاع الشبكة.
+            </p>
+            <span class="feature-tag">وصول غير محدود · Offline</span>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="feature-card reveal delay-3" aria-label="التحديثات المنتظمة">
+            <div class="feature-icon-wrap" aria-hidden="true">
+              <span>🔄</span>
+            </div>
+            <h3>تحديثات علمية منتظمة</h3>
+            <p>
+              فريق من الصيادلة المختصين يراجع ويحدّث المحتوى بصفة دورية لضمان تزويدك بأحدث المعلومات الدوائية والسريرية المعتمدة.
+            </p>
+            <span class="feature-tag">مراجعة دورية بمعايير علمية</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         HOW IT WORKS
+    ══════════════════════════════════════ -->
+    <section id="how-it-works" aria-labelledby="how-heading">
+      <div class="container">
+
+        <header class="text-center reveal">
+          <div class="section-tag">🔧 خطوات بسيطة</div>
+          <h2 class="section-title" id="how-heading">كيف يعمل التطبيق؟</h2>
+          <p class="section-subtitle">
+            ابدأ استخدام التطبيق في أقل من دقيقة واحدة
+          </p>
+        </header>
+
+        <div class="steps-grid">
+
+          <div class="step-item reveal delay-1">
+            <div class="step-number" aria-label="الخطوة الأولى">١</div>
+            <h3>حمّل التطبيق</h3>
+            <p>
+              قم بتنزيل التطبيق مجاناً من متجر Google Play أو App Store على جهازك الذكي.
+            </p>
+          </div>
+
+          <div class="step-item reveal delay-2">
+            <div class="step-number" aria-label="الخطوة الثانية">٢</div>
+            <h3>ابحث فوراً</h3>
+            <p>
+              اكتب اسم الدواء أو المادة الفعّالة وستحصل على معلومات شاملة في ثوانٍ.
+            </p>
+          </div>
+
+          <div class="step-item reveal delay-3">
+            <div class="step-number" aria-label="الخطوة الثالثة">٣</div>
+            <h3>اتخذ القرار الصحيح</h3>
+            <p>
+              احصل على توصيات OTC دقيقة وأسعار محدّثة لتقديم أفضل خدمة لمريضك بثقة.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         TRUST / STATS + TESTIMONIALS
+    ══════════════════════════════════════ -->
+    <section id="trust" aria-labelledby="trust-heading">
+      <div class="container trust-inner">
+
+        <!-- Stats Row -->
+        <header class="text-center reveal" style="margin-bottom:56px;">
+          <div class="section-tag" style="background:rgba(43,181,177,0.15); color:var(--teal);">📊 في أرقام</div>
+          <h2 class="section-title" id="trust-heading" style="color:#fff;">
+            يثق بنا آلاف الصيادلة في العراق
+          </h2>
+        </header>
+
+        <div class="trust-stats-row" role="list" aria-label="إحصائيات التطبيق">
+
+          <div class="trust-stat reveal delay-1" role="listitem">
+            <span class="t-icon" aria-hidden="true">👥</span>
+            <span class="t-number"
+              data-count="5000"
+              data-suffix="+"
+              aria-label="أكثر من خمسة آلاف صيدلاني">٠</span>
+            <span class="t-label">صيدلاني مُسجَّل</span>
+          </div>
+
+          <div class="trust-stat reveal delay-2" role="listitem">
+            <span class="t-icon" aria-hidden="true">💊</span>
+            <span class="t-number"
+              data-count="3200"
+              data-suffix="+"
+              aria-label="أكثر من ثلاثة آلاف دواء">٠</span>
+            <span class="t-label">دواء موثّق في القاعدة</span>
+          </div>
+
+          <div class="trust-stat reveal delay-3" role="listitem">
+            <span class="t-icon" aria-hidden="true">⭐</span>
+            <span class="t-number"
+              data-count="4.9"
+              data-suffix="/٥"
+              aria-label="تقييم أربعة وتسعة من خمسة">٠</span>
+            <span class="t-label">متوسط التقييم</span>
+          </div>
+
+          <div class="trust-stat reveal delay-4" role="listitem">
+            <span class="t-icon" aria-hidden="true">🏥</span>
+            <span class="t-number"
+              data-count="18"
+              data-suffix=" محافظة"
+              aria-label="ثمانية عشر محافظة">٠</span>
+            <span class="t-label">تغطية جغرافية عراقية</span>
+          </div>
+
+        </div>
+
+        <!-- Testimonials -->
+        <h3 class="testimonials-title reveal">ماذا يقول صيادلة العراق؟</h3>
+
+        <div class="testimonials-grid">
+
+          <article class="testimonial-card reveal delay-1" aria-label="شهادة صيدلاني من بغداد">
+            <div class="testimonial-stars" aria-label="تقييم خمس نجوم">★★★★★</div>
+            <p class="testimonial-text">
+              "من أفضل التطبيقات التي استخدمتها في مسيرتي المهنية. جزء OTC رائع وموثوق جداً، وفّر علي الكثير من الوقت في الصيدلية."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: #2BB5B1;" aria-hidden="true">م.ع</div>
+              <div class="author-info">
+                <strong>م. علي الموسوي</strong>
+                <span>صيدلاني — بغداد</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal delay-2" aria-label="شهادة صيدلانية من البصرة">
+            <div class="testimonial-stars" aria-label="تقييم خمس نجوم">★★★★★</div>
+            <p class="testimonial-text">
+              "دليل الأسعار التجارية هو المميزة الأقوى بالنسبة لي. لم أعد بحاجة للبحث في عشرات المصادر — كل شيء هنا ومحدّث باستمرار."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: #6C63FF;" aria-hidden="true">ز.ح</div>
+              <div class="author-info">
+                <strong>م. زينب الحسيني</strong>
+                <span>صيدلانية سريرية — البصرة</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal delay-3" aria-label="شهادة صيدلاني من أربيل">
+            <div class="testimonial-stars" aria-label="تقييم خمس نجوم">★★★★★</div>
+            <p class="testimonial-text">
+              "أخيراً تطبيق صيدلاني عراقي بمستوى عالمي! الواجهة نظيفة، البحث سريع جداً، والمحتوى علمي ودقيق. أنصح به كل زميل في المهنة."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar" style="background: #FF6B6B;" aria-hidden="true">س.ر</div>
+              <div class="author-info">
+                <strong>م. سردار رشيد</strong>
+                <span>صيدلاني مجتمعي — أربيل</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         DOWNLOAD CTA SECTION
+    ══════════════════════════════════════ -->
+    <section id="download-cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="download-card reveal">
+          <div class="download-card-inner">
+
+            <h2 id="cta-heading">
+              ابدأ رحلتك الصيدلانية الاحترافية اليوم 🚀
+            </h2>
+            <p>
+              انضم إلى أكثر من ٥٠٠٠ صيدلاني يثقون في دليل الصيدلة العراقي يومياً.<br />
+              التطبيق مجاني تماماً ومتاح على جميع الأجهزة.
+            </p>
+
+            <div class="download-btn-group">
+
+              <!-- ⬇ Replace href="#" with your actual Google Play Store link -->
+              <a href="#" id="dl-google-play" class="btn-dl btn-dl-white" aria-label="تحميل من Google Play">
+                <span class="btn-dl-icon" aria-hidden="true">▶</span>
+                <span class="btn-dl-text">
+                  <small>تحميل مجاني من</small>
+                  <strong>Google Play</strong>
+                </span>
+              </a>
+
+              <!-- ⬇ Replace href="#" with your actual Apple App Store link -->
+              <a href="#" id="dl-app-store" class="btn-dl btn-dl-outline" aria-label="تحميل من App Store">
+                <span class="btn-dl-icon" aria-hidden="true"></span>
+                <span class="btn-dl-text">
+                  <small>متوفر على</small>
+                  <strong>App Store</strong>
+                </span>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="#" class="logo logo--img" aria-label="دليل الصيدلة العراقي">
+            <img
+              src="assets/logo.png"
+              alt="دليل الصيدلة العراقي"
+              class="logo-img"
+              width="130"
+              height="40"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="logo-fallback" style="display:none;">
+              <div class="logo-icon" aria-hidden="true">💊</div>
+              <div class="logo-text">
+                <span class="name-ar">دليل الصيدلة العراقي</span>
+                <span class="name-en">Iraq Pharma Guide</span>
+              </div>
+            </div>
+          </a>
+          <p>
+            مرجعك الصيدلاني الاحترافي الأول في العراق — مبني بعناية من قِبَل فريق من الصيادلة لخدمة الصيادلة.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="#hero">الرئيسية</a></li>
+            <li><a href="#features">المميزات</a></li>
+            <li><a href="#how-it-works">كيف يعمل؟</a></li>
+            <li><a href="#trust">آراء المستخدمين</a></li>
+            <li><a href="#download-cta">تحميل التطبيق</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="footer-col">
+          <h4>قانوني</h4>
+          <ul>
+            <!-- ⬇ Replace href="#" with links to your actual privacy policy and terms pages -->
+            <li><a href="#" id="link-privacy">سياسة الخصوصية</a></li>
+            <li><a href="#" id="link-terms">شروط الاستخدام</a></li>
+            <li><a href="#">إخلاء المسؤولية</a></li>
+            <li><a href="#">سياسة الاستخدام الطبي</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact / Support -->
+        <div class="footer-col">
+          <h4>الدعم والتواصل</h4>
+
+          <!-- Email -->
+          <div class="contact-item">
+            <div class="contact-icon email" aria-hidden="true">📧</div>
+            <div class="contact-info">
+              <strong>البريد الإلكتروني</strong>
+              <a href="mailto:support@iraqpharmaguide.com">
+                support@iraqpharmaguide.com
+              </a>
+            </div>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="contact-item">
+            <div class="contact-icon whatsapp" aria-hidden="true">
+              <!-- WhatsApp icon SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#25D366" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <strong>واتساب</strong>
+              <!-- ⬇ Replace with your actual WhatsApp number -->
+              <a href="https://wa.me/9647XXXXXXXXX" target="_blank" rel="noopener noreferrer">
+                +964 7XX XXX XXXX
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="currentYear">2026</span> دليل الصيدلة العراقي — جميع الحقوق محفوظة.
+        </p>
+
+        <div class="footer-legal">
+          <a href="#" id="footer-privacy">سياسة الخصوصية</a>
+          <a href="#" id="footer-terms">شروط الاستخدام</a>
+        </div>
+
+        <div class="footer-social" aria-label="وسائل التواصل الاجتماعي">
+          <!-- ⬇ Replace href="#" with your actual social media links -->
+          <a href="#" class="social-btn" aria-label="صفحتنا على فيسبوك">f</a>
+          <a href="#" class="social-btn" aria-label="حسابنا على إنستغرام">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="قناتنا على تيليغرام">✈</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scroll To Top Button -->
+  <button id="scrollTop" aria-label="العودة إلى الأعلى" title="العودة إلى الأعلى">
+    ↑
+  </button>
+
+  <!-- ── JavaScript ── -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>
