@@ -336,13 +336,11 @@
     </div>
 
     <div class="footer-legal">
-      <!-- ★ Replace href="#" with your actual Privacy Policy page URL -->
-      <a href="https://iraqpharma.github.io/iraq-pharma-guide/privacy-policy.html" id="fp-privacy">سياسة الخصوصية</a>
+      <a href="#" id="fp-privacy">سياسة الخصوصية</a>
       <span aria-hidden="true">·</span>
-      <!-- ★ Replace href="#" with your actual Terms of Service page URL -->
-      <a href="https://iraqpharma.github.io/iraq-pharma-guide/terms.html" id="fp-terms">شروط الاستخدام</a>
+      <a href="#" id="fp-terms">شروط الاستخدام</a>
       <span aria-hidden="true">·</span>
-      <a href="https://iraqpharma.github.io/iraq-pharma-guide/disclaimer.html">إخلاء المسؤولية</a>
+      <a href="#" id="fp-disclaimer">إخلاء المسؤولية</a>
     </div>
 
     <p class="footer-copy">
@@ -366,6 +364,21 @@
   </div>
 
   <button id="scrollTop" aria-label="العودة للأعلى">↑</button>
-  <script src="script.js" defer></script>
+
+  <!-- ══ LEGAL MODAL ══ -->
+  <div id="legalModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalTitle"></h3>
+        <button id="closeModal" class="modal-close" aria-label="إغلاق">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="modalFrame" src="" frameborder="0" title="معلومات قانونية"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCRIPTS ══ -->
+  <script src="script.js"></script>
 </body>
 </html>

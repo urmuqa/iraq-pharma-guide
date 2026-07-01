@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 /* ================================================================
    Iraq Pharma Guide — Mobile-First JavaScript
    Features: sticky header, menu, scroll reveal, counters,
@@ -171,5 +171,45 @@ const $$ = (s, c=document) => [...c.querySelectorAll(s)];
       const hh = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hh')) || 58;
       window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - hh, behavior:'smooth'});
     });
+  });
+})();
+
+/* 11. LEGAL MODAL */
+(function(){
+  const modal = $('#legalModal');
+  const frame = $('#modalFrame');
+  const title = $('#modalTitle');
+  const closeBtn = $('#closeModal');
+
+  if(!modal || !frame || !title || !closeBtn) return;
+
+  const links = {
+    'fp-privacy': { url: 'https://iraqpharma.github.io/iraq-pharma-guide/privacy-policy.html', text: 'سياسة الخصوصية' },
+    'fp-terms': { url: 'https://iraqpharma.github.io/iraq-pharma-guide/terms.html', text: 'شروط الاستخدام' },
+    'fp-disclaimer': { url: 'https://iraqpharma.github.io/iraq-pharma-guide/disclaimer.html', text: 'إخلاء المسؤولية' }
+  };
+
+  Object.keys(links).forEach(id => {
+    const el = $('#' + id);
+    if(el) {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        title.textContent = links[id].text;
+        frame.src = links[id].url;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      });
+    }
+  });
+
+  const closeModal = () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => frame.src = '', 300); // Clear iframe after animation
+  };
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => {
+    if(e.target === modal) closeModal();
   });
 })();
