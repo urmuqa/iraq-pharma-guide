@@ -362,6 +362,153 @@ button{font-family:var(--font);cursor:pointer;-webkit-tap-highlight-color:transp
 #scrollTop.visible{opacity:1;transform:translateY(0);}
 #scrollTop:active{transform:scale(.92);}
 
+/* ══ ADVERTISE BANNER ══ */
+#advertise{
+  padding:16px 20px 32px;
+}
+.ads-banner{
+  background:linear-gradient(135deg, rgba(17,94,84,.07) 0%, rgba(29,132,120,.13) 100%);
+  border:1.5px solid rgba(29,132,120,.25);
+  border-radius:24px;
+  max-width:900px;
+  margin-inline:auto;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 8px 32px rgba(17,94,84,.08);
+}
+/* shimmer top line */
+.ads-banner::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg, transparent 0%, var(--teal) 50%, transparent 100%);
+  opacity:.6;
+}
+/* decorative circle bg */
+.ads-banner::after{
+  content:'';
+  position:absolute;
+  width:220px;height:220px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(29,132,120,.08) 0%, transparent 70%);
+  left:-40px;bottom:-60px;
+  pointer-events:none;
+}
+.ads-inner{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:32px 28px;
+  flex-wrap:wrap;
+  position:relative;
+  z-index:1;
+}
+.ads-icon-wrap{
+  flex-shrink:0;
+  width:64px;height:64px;
+  background:rgba(29,132,120,.12);
+  border-radius:18px;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(29,132,120,.2);
+}
+.ads-icon{
+  font-size:2rem;
+  animation:ads-pulse 2.5s ease-in-out infinite;
+}
+@keyframes ads-pulse{
+  0%,100%{transform:scale(1) rotate(-6deg);}
+  50%{transform:scale(1.18) rotate(6deg);}
+}
+.ads-text{
+  flex:1;
+  min-width:180px;
+}
+.ads-tag{
+  display:inline-block;
+  font-size:.75rem;
+  font-weight:700;
+  color:var(--teal);
+  background:rgba(29,132,120,.1);
+  border:1px solid rgba(29,132,120,.25);
+  border-radius:var(--pill);
+  padding:3px 12px;
+  margin-bottom:10px;
+  letter-spacing:.3px;
+}
+.ads-text h3{
+  margin:0 0 6px;
+  font-size:1.15rem;
+  font-weight:800;
+  color:var(--teal-d);
+  line-height:1.4;
+}
+.ads-text p{
+  margin:0;
+  font-size:.85rem;
+  color:var(--slate);
+  line-height:1.6;
+}
+/* ── CTA Button — prominent glow ── */
+.ads-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:14px 28px;
+  background:linear-gradient(135deg, var(--teal) 0%, var(--teal-d) 100%);
+  color:#fff;
+  border-radius:var(--pill);
+  font-size:.95rem;
+  font-weight:800;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:all .3s cubic-bezier(.34,1.56,.64,1);
+  box-shadow:0 6px 20px rgba(17,94,84,.35), 0 2px 6px rgba(17,94,84,.2);
+  flex-shrink:0;
+  position:relative;
+  overflow:hidden;
+}
+/* inner shine sweep */
+.ads-cta::before{
+  content:'';
+  position:absolute;
+  top:0;left:-60%;
+  width:40%;height:100%;
+  background:rgba(255,255,255,.18);
+  transform:skewX(-20deg);
+  transition:left .45s ease;
+}
+.ads-cta:hover::before{
+  left:130%;
+}
+.ads-cta:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 12px 28px rgba(17,94,84,.45), 0 4px 10px rgba(17,94,84,.25);
+}
+.ads-cta:active{
+  transform:translateY(-1px) scale(.99);
+}
+.ads-cta-icon{
+  font-size:1.1rem;
+}
+
+/* ── Mobile adjustments ── */
+@media(max-width:560px){
+  .ads-inner{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+    padding:24px 20px;
+  }
+  .ads-cta{
+    width:100%;
+    justify-content:center;
+    padding:14px 20px;
+    font-size:.9rem;
+  }
+  .ads-text h3{
+    font-size:1.05rem;
+  }
+}
+
 /* ══ LEGAL MODAL (PREMIUM DESIGN) ══ */
 .modal-overlay{
   position:fixed;top:0;left:0;width:100%;height:100%;
