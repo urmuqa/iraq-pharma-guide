@@ -172,7 +172,9 @@ const $$ = (s, c=document) => [...c.querySelectorAll(s)];
       window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - hh, behavior:'smooth'});
     });
   });
-})(/* 11. LEGAL MODAL */
+})();
+
+/* 11. LEGAL MODAL */
 (function(){
   const modal = $('#legalModal');
   const content = $('#modalContent');
@@ -193,14 +195,12 @@ const $$ = (s, c=document) => [...c.querySelectorAll(s)];
       el.addEventListener('click', e => {
         e.preventDefault();
         title.textContent = links[id].text;
-        
         const template = $(links[id].templateId);
         if(template) {
           content.innerHTML = template.innerHTML;
         }
-        
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
       });
     }
   });
@@ -208,7 +208,7 @@ const $$ = (s, c=document) => [...c.querySelectorAll(s)];
   const closeModal = () => {
     modal.classList.remove('active');
     document.body.style.overflow = '';
-    setTimeout(() => content.innerHTML = '', 300); // Clear content after animation
+    setTimeout(() => content.innerHTML = '', 300);
   };
 
   closeBtn.addEventListener('click', closeModal);
@@ -216,3 +216,4 @@ const $$ = (s, c=document) => [...c.querySelectorAll(s)];
     if(e.target === modal) closeModal();
   });
 })();
+
