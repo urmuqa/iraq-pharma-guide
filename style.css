@@ -430,15 +430,133 @@ button{font-family:var(--font);cursor:pointer;-webkit-tap-highlight-color:transp
 }
 .modal-body{
   flex:1;
-  overflow:hidden;
+  overflow-y:auto;
   position:relative;
-  background:#fcfcfc;
+  background:#f8fafc;
+  -webkit-overflow-scrolling:touch;
 }
-.modal-body iframe{
-  width:100%;height:100%;
-  min-height:65vh;
-  display:block;
+
+/* ── Custom Styled Content inside Modal ── */
+.modal-text-content {
+  text-align: right;
+  direction: rtl;
 }
+
+.legal-hero {
+  padding: 36px 24px;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.legal-privacy {
+  background: linear-gradient(135deg, #115e54 0%, #1d8478 100%);
+}
+
+.legal-terms {
+  background: linear-gradient(135deg, #283593 0%, #3f51b5 100%);
+}
+
+.legal-disclaimer {
+  background: linear-gradient(135deg, #bf360c 0%, #d84315 100%);
+}
+
+.legal-hero-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.legal-hero h4 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.legal-hero p {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.legal-container {
+  padding: 24px;
+}
+
+.legal-date {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 99px;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  background-color: var(--teal);
+}
+
+.legal-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.legal-card h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--slate-d);
+  margin: 0 0 10px 0;
+  border-bottom: 2px solid rgba(29, 132, 120, 0.08);
+  padding-bottom: 8px;
+}
+
+.legal-card p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--slate);
+  margin: 0;
+}
+
+.legal-card ul {
+  padding-right: 20px;
+  margin: 10px 0 0 0;
+}
+
+.legal-card li {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--slate);
+  margin-bottom: 6px;
+}
+
+.legal-card li:last-child {
+  margin-bottom: 0;
+}
+
+.legal-card strong {
+  color: var(--slate-d);
+}
+
+.legal-card a {
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.legal-card a:hover {
+  text-decoration: underline;
+}
+
+.legal-warning-card {
+  border-right: 4px solid #d84315 !important;
+}
+
 
 /* ══ TABLET ≥ 640px ══ */
 @media(min-width:640px){
