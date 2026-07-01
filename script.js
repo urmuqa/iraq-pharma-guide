@@ -184,10 +184,143 @@ const $$ = (s, c=document) => [...c.querySelectorAll(s)];
   if(!modal || !frame || !title || !closeBtn) return;
 
   const links = {
-    'fp-privacy': { url: 'https://iraqpharma.github.io/iraq-pharma-guide/privacy-policy.html', text: 'سياسة الخصوصية' },
-    'fp-terms': { url: 'https://iraqpharma.github.io/iraq-pharma-guide/terms.html', text: 'شروط الاستخدام' },
-    'fp-disclaimer': { url: 'https://iraqpharma.github.io/iraq-pharma-guide/disclaimer.html', text: 'إخلاء المسؤولية' }
+    'fp-privacy': { url: './privacy-policy.html', text: 'سياسة الخصوصية' },
+    'fp-terms': { url: './terms.html', text: 'شروط الاستخدام' },
+    'fp-disclaimer': { url: './disclaimer.html', text: 'إخلاء المسؤولية' }
   };
+
+  // Inject style when iframe loads to make it look premium and match site theme
+  frame.addEventListener('load', () => {
+    try {
+      const doc = frame.contentDocument || frame.contentWindow.document;
+      if (!doc) return;
+
+      // Prevent duplicate injection
+      if (doc.getElementById('modal-custom-style')) return;
+
+      const style = doc.createElement('style');
+      style.id = 'modal-custom-style';
+      style.textContent = `
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+        body {
+          font-family: 'Cairo', system-ui, -apple-system, sans-serif !important;
+          background-color: #f8fafc !important;
+          color: #334155 !important;
+          padding: 24px !important;
+          margin: 0 !important;
+          direction: rtl !important;
+          line-height: 1.8 !important;
+        }
+
+        /* Hide full page layouts */
+        nav, header, footer {
+          display: none !important;
+        }
+
+        /* Customize Hero section */
+        .hero {
+          background: linear-gradient(135deg, #115e54 0%, #1d8478 100%) !important;
+          color: #ffffff !important;
+          padding: 30px 20px !important;
+          text-align: center !important;
+          border-radius: 20px !important;
+          margin-bottom: 24px !important;
+          box-shadow: 0 10px 25px -5px rgba(29, 132, 120, 0.1) !important;
+          border: none !important;
+        }
+
+        .hero-icon {
+          font-size: 2.5rem !important;
+          margin-bottom: 8px !important;
+          display: block !important;
+        }
+
+        .hero h1 {
+          margin: 0 !important;
+          font-size: 1.5rem !important;
+          font-weight: 800 !important;
+          color: #ffffff !important;
+        }
+
+        .hero p {
+          margin: 6px 0 0 !important;
+          font-size: 0.9rem !important;
+          opacity: 0.9 !important;
+          color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        /* Container & Grid layout */
+        .container {
+          max-width: 100% !important;
+          width: 100% !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+
+        .updated-badge {
+          display: inline-block !important;
+          padding: 6px 14px !important;
+          border-radius: 99px !important;
+          color: #ffffff !important;
+          font-size: 0.8rem !important;
+          font-weight: 600 !important;
+          margin-bottom: 20px !important;
+          background-color: #1d8478 !important;
+        }
+
+        /* Cards customization */
+        .card {
+          background: #ffffff !important;
+          border-radius: 16px !important;
+          padding: 24px !important;
+          margin-bottom: 20px !important;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02) !important;
+          border: 1px solid rgba(226, 232, 240, 0.8) !important;
+        }
+
+        .card-title {
+          font-size: 1.15rem !important;
+          font-weight: 700 !important;
+          color: #0f172a !important;
+          margin-bottom: 12px !important;
+          border-bottom: 2px solid rgba(29, 132, 120, 0.08) !important;
+          padding-bottom: 8px !important;
+        }
+
+        ul {
+          padding-right: 20px !important;
+          margin: 12px 0 0 !important;
+        }
+
+        li {
+          margin-bottom: 8px !important;
+          color: #475569 !important;
+        }
+
+        strong {
+          color: #0f172a !important;
+        }
+
+        a {
+          color: #1d8478 !important;
+          text-decoration: none !important;
+          font-weight: 600 !important;
+        }
+
+        a:hover {
+          text-decoration: underline !important;
+        }
+
+        .warning-card {
+          border-right: 4px solid #f59e0b !important;
+        }
+      `;
+      doc.head.appendChild(style);
+    } catch (err) {
+      console.warn("Could not customize iframe style due to origin restrictions:", err);
+    }
+  });
 
   Object.keys(links).forEach(id => {
     const el = $('#' + id);
