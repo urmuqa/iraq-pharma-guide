@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+:root {
+  --teal: #1D8478;
+  --teal-d: #166B61;
+  --teal-lt: #E3F4F2;
+  --dark: #1A2832;
+  --slate: #3A5260;
+  --muted: #7A8E98;
+  --bg: #F6FAF9;
+  --white: #FFFFFF;
+  --border: #D4E8E5;
+  --radius: 16px;
+  --font: 'Cairo', sans-serif;
+  --accent: #1D8478;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  direction: rtl;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Navigation ── */
+nav {
+  background: var(--teal);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 16px rgba(29, 132, 120, 0.2);
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 6px 12px;
+  border-radius: 99px;
+  transition: all 0.25s ease;
+}
+
+nav a:hover, nav a.active {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+nav .brand {
+  margin-right: auto;
+  color: var(--white);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--teal-d) 0%, var(--teal) 100%);
+  position: relative;
+}
+
+.hero-icon {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.hero p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+/* ── Container & Cards ── */
+.container {
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.updated-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(29, 132, 120, 0.04);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--teal-d);
+  margin-bottom: 12px;
+  border-bottom: 2px solid rgba(29, 132, 120, 0.08);
+  padding-bottom: 6px;
+}
+
+.card p {
+  font-size: 0.92rem;
+  color: var(--slate);
+}
+
+.card ul {
+  padding-right: 20px;
+  margin-top: 10px;
+}
+
+.card li {
+  font-size: 0.9rem;
+  color: var(--slate);
+  margin-bottom: 6px;
+}
+
+.card strong {
+  color: var(--dark);
+}
+
+.card a {
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.warning-card {
+  border-right: 4px solid #E65100;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 32px 20px;
+  background: var(--dark);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  margin-top: 60px;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  margin: 0 6px;
+  transition: color 0.25s ease;
+}
+
+footer a:hover {
+  color: var(--teal-lt);
+}
+
+@media (max-width: 560px) {
+  nav {
+    justify-content: center;
+  }
+  nav .brand {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+    order: -1;
+    margin-bottom: 8px;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+}
