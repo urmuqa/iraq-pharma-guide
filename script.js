@@ -174,46 +174,5 @@ const $$ = (s, c=document) => [...c.querySelectorAll(s)];
   });
 })();
 
-/* 11. LEGAL MODAL */
-(function(){
-  const modal = $('#legalModal');
-  const content = $('#modalContent');
-  const title = $('#modalTitle');
-  const closeBtn = $('#closeModal');
 
-  if(!modal || !content || !title || !closeBtn) return;
-
-  const links = {
-    'fp-privacy': { templateId: '#privacyContent', text: 'سياسة الخصوصية' },
-    'fp-terms': { templateId: '#termsContent', text: 'شروط الاستخدام' },
-    'fp-disclaimer': { templateId: '#disclaimerContent', text: 'إخلاء المسؤولية' }
-  };
-
-  Object.keys(links).forEach(id => {
-    const el = $('#' + id);
-    if(el) {
-      el.addEventListener('click', e => {
-        e.preventDefault();
-        title.textContent = links[id].text;
-        const template = $(links[id].templateId);
-        if(template) {
-          content.innerHTML = template.innerHTML;
-        }
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-    }
-  });
-
-  const closeModal = () => {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-    setTimeout(() => content.innerHTML = '', 300);
-  };
-
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', e => {
-    if(e.target === modal) closeModal();
-  });
-})();
 
