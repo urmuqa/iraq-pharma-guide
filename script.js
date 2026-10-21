@@ -72,7 +72,9 @@ const $$ = (s, c=document) => [...c.querySelectorAll(s)];
       if(!start) start = ts;
       const p = Math.min((ts-start)/dur, 1);
       const v = easeOut(p)*target;
-      el.textContent = (target%1===0 ? Math.round(v).toLocaleString('ar-IQ') : v.toFixed(1)) + suffix;
+      // Latin digits, to match the static figures in the hero bar.
+      // Switch 'en-US' to 'ar-IQ' here if Arabic-Indic numerals are preferred.
+      el.textContent = (target%1===0 ? Math.round(v).toLocaleString('en-US') : v.toFixed(1)) + suffix;
       if(p<1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);

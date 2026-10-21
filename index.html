@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#1D8478" />
+  <meta name="theme-color" content="#0B3B36" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="دليل الصيدلة العراقي" />
   <title>دليل الصيدلة العراقي — المرجع الصيدلاني الموثوق</title>
-  <meta name="description" content="تطبيق دليل الصيدلة العراقي: دليل OTC علمي، أدوات طبية سريعة، وأسعار الأدوية في العراق." />
-  <meta property="og:title" content="دليل الصيدلة العراقي" />
-  <meta property="og:description" content="المرجع الصيدلاني الموثوق للصيادلة في العراق" />
+  <meta name="description" content="تطبيق دليل الصيدلة العراقي: 754 دواء موثّق، فحص التداخلات الدوائية، أدوات سريرية سريعة، وأسعار الأدوية في السوق العراقي. يعمل بدون إنترنت ومجاني بالكامل." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="دليل الصيدلة العراقي — المرجع الصيدلاني الموثوق" />
+  <meta property="og:description" content="754 دواء موثّق · فحص التداخلات الدوائية · أدوات سريرية سريعة · يعمل بدون إنترنت" />
   <meta property="og:image" content="assets/app-screenshot.png" />
   <link rel="icon" href="assets/logoweb.jpeg" type="image/jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -24,15 +25,15 @@
   <header id="header">
     <div class="header-inner">
 
-      <!-- Logo + App Name -->
-      <a href="#" class="logo" aria-label="دليل الصيدلة العراقي">
+      <a href="#hero" class="logo" aria-label="دليل الصيدلة العراقي">
         <img src="assets/logo.png" alt="دليل الصيدلة العراقي" class="logo-img"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='inline';" />
-        <span class="logo-fallback" style="display:none;">💊</span>
+          onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" />
+        <span class="logo-fallback" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 0-7.07l0 0a5 5 0 0 1 7.07 0l7 7a5 5 0 0 1 0 7.07l0 0a5 5 0 0 1-7.07 0Z"/><path d="m7 10 7 7"/></svg>
+        </span>
         <span class="logo-name">دليل الصيدلة العراقي</span>
       </a>
 
-      <!-- Desktop Navigation (visible ≥ 1024px) -->
       <nav class="desktop-nav" aria-label="التنقل الرئيسي">
         <a href="#hero">الرئيسية</a>
         <a href="#features">المميزات</a>
@@ -41,19 +42,32 @@
         <a href="#contact" class="desk-nav-cta">تواصل معنا</a>
       </nav>
 
-      <!-- Mobile Hamburger -->
       <button id="menuBtn" class="menu-btn" aria-label="القائمة" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
 
-    <!-- Mobile Dropdown -->
     <nav id="dropMenu" class="drop-menu" aria-hidden="true">
-      <a href="#hero"        class="drop-link">🏠 الرئيسية</a>
-      <a href="#features"    class="drop-link">⭐ المميزات</a>
-      <a href="#app-preview" class="drop-link">📱 معاينة التطبيق</a>
-      <a href="#stats"       class="drop-link">📊 إحصائيات</a>
-      <a href="#contact"     class="drop-link">📩 تواصل معنا</a>
+      <a href="#hero" class="drop-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22V12h6v10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        الرئيسية
+      </a>
+      <a href="#features" class="drop-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 9.8 8.8 4 11l5.8 2.2L12 19l2.2-5.8L20 11l-5.8-2.2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        المميزات
+      </a>
+      <a href="#app-preview" class="drop-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2" stroke-linecap="round"/></svg>
+        معاينة التطبيق
+      </a>
+      <a href="#stats" class="drop-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke-linecap="round"/></svg>
+        إحصائيات
+      </a>
+      <a href="#contact" class="drop-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="m3.5 7 8.5 6 8.5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        تواصل معنا
+      </a>
     </nav>
   </header>
 
@@ -63,7 +77,6 @@
     <div class="hero-bg-blob" aria-hidden="true"></div>
     <div class="hero-content">
 
-      <!-- ══ Text Column ══ -->
       <div class="hero-text">
         <div class="hero-badge reveal">
           <span class="badge-dot"></span>
@@ -79,20 +92,16 @@
           معلومات دوائية شاملة · تحديد أسعار المنتجات التجارية · أدوات طبية سريعة
         </p>
 
-        <!-- Stats Bar -->
         <div class="hero-stats reveal delay-3">
-          <div class="stat"><span class="stat-n">+5000</span><span class="stat-l">صيدلاني</span></div>
+          <div class="stat"><span class="stat-n">754</span><span class="stat-l">دواء موثّق</span></div>
           <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat"><span class="stat-n">+3000</span><span class="stat-l">دواء موثّق</span></div>
+          <div class="stat"><span class="stat-n">57</span><span class="stat-l">تداخلاً دوائياً</span></div>
           <div class="stat-divider" aria-hidden="true"></div>
-          <div class="stat"><span class="stat-n">4.9 ⭐</span><span class="stat-l">تقييم</span></div>
+          <div class="stat"><span class="stat-n">100%</span><span class="stat-l">بدون إنترنت</span></div>
         </div>
       </div>
 
-      <!-- ══ Phone Mockup Column ══
-           ★ الحجم الصحيح للصورة: 390 × 844 px (نسبة 9:19.5 مثل iPhone)
-           ★ المسار: assets/app-screenshot.png
-      -->
+      <!-- ★ صورة اللقطة: 390 × 844 px — assets/app-screenshot.png -->
       <div class="mockup-wrap reveal delay-2" aria-label="معاينة التطبيق">
         <div class="mockup-glow" aria-hidden="true"></div>
         <div class="mockup-phone">
@@ -105,14 +114,23 @@
             onerror="this.style.display='none';this.parentElement.querySelector('.mockup-placeholder').style.display='flex';"
           />
           <div class="mockup-placeholder" aria-hidden="true">
-            <span>📱</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2"/></svg>
             <p>ضع لقطة شاشة التطبيق هنا</p>
             <small>assets/app-screenshot.png</small>
           </div>
         </div>
-        <div class="chip chip-1" aria-hidden="true">✅ مراجعة طبية موثّقة</div>
-        <div class="chip chip-2" aria-hidden="true">🔔 تحديث يومي</div>
-        <div class="chip chip-3" aria-hidden="true">📶 يعمل بدون إنترنت</div>
+        <div class="chip chip-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.5v6c0 5 3.4 9.3 8 10.5 4.6-1.2 8-5.5 8-10.5v-6Z"/><path d="m9 12 2 2 4-4"/></svg>
+          مراجعة طبية موثّقة
+        </div>
+        <div class="chip chip-2" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8.5a6 6 0 1 0-12 0c0 6-2.5 7.5-2.5 7.5h17S18 14.5 18 8.5"/><path d="M13.7 20a2 2 0 0 1-3.4 0"/></svg>
+          تحديث يومي
+        </div>
+        <div class="chip chip-3" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 16a5 5 0 0 1 7 0"/><path d="M12 20h.01"/><path d="m3 3 18 18"/></svg>
+          يعمل بدون إنترنت
+        </div>
       </div>
 
     </div>
@@ -124,50 +142,65 @@
   <!-- ══ FEATURES ══ -->
   <section id="features" class="section-pad">
     <div class="section-head reveal">
-      <div class="section-tag">✨ المميزات</div>
+      <div class="section-tag">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 9.8 8.8 4 11l5.8 2.2L12 19l2.2-5.8L20 11l-5.8-2.2Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        المميزات
+      </div>
       <h2 class="section-title">كل ما تحتاجه كصيدلاني</h2>
     </div>
     <div class="feat-track" id="featTrack" role="list">
 
       <article class="feat-card" role="listitem">
-        <div class="feat-icon" style="background:#E8F5E9;">🧪</div>
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2v6.5L4.2 17A3 3 0 0 0 6.8 21.5h10.4A3 3 0 0 0 19.8 17L15 8.5V2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 2h8M6.8 14h10.4" stroke-linecap="round"/></svg>
+        </div>
         <h3>دليل OTC علمي</h3>
-        <p>بروتوكولات صرف الأدوية بدون وصفة مبنية على أحدث الإرشادات السريرية العالمية.</p>
+        <p>بروتوكولات صرف الأدوية بدون وصفة مبنية على أحدث الإرشادات السريرية العالمية</p>
         <span class="feat-tag">دليل موثّق</span>
       </article>
 
       <article class="feat-card" role="listitem">
-        <div class="feat-icon" style="background:#FFF3E0;">⚡</div>
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
         <h3>أدوات طبية سريعة</h3>
-        <p>حاسبات للجرعات، فحص التداخلات الدوائية، وتعديلات الجرعة لمرضى القصور الكلوي والكبدي.</p>
+        <p>حاسبات للجرعات، فحص التداخلات الدوائية، وتعديلات الجرعة لمرضى القصور الكلوي والكبدي</p>
         <span class="feat-tag">احترافية متكاملة</span>
       </article>
 
       <article class="feat-card" role="listitem">
-        <div class="feat-icon" style="background:#E8F4FD;">💰</div>
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 12.4 21.6a2 2 0 0 1-2.8 0l-7.2-7.2a2 2 0 0 1-.6-1.4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 1.4.6l7.4 7.4a2 2 0 0 1 0 2.8Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 7.5h.01" stroke-linecap="round"/></svg>
+        </div>
         <h3>الأسعار التجارية</h3>
-        <p>قاعدة بيانات شاملة لأسعار الأدوية في السوق العراقي محدّثة بانتظام.</p>
+        <p>قاعدة بيانات شاملة لأسعار الأدوية في السوق العراقي محدّثة بانتظام</p>
         <span class="feat-tag">تحديث مستمر</span>
       </article>
 
       <article class="feat-card" role="listitem">
-        <div class="feat-icon" style="background:#F3E5F5;">🔍</div>
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20.5 20.5-4.4-4.4" stroke-linecap="round"/></svg>
+        </div>
         <h3>بحث ذكي وفوري</h3>
-        <p>يدعم الاسم التجاري والمادة الفعّالة بالعربية والإنجليزية مع تصحيح تلقائي.</p>
+        <p>يدعم الاسم التجاري والمادة الفعّالة بالعربية والإنجليزية مع تصحيح تلقائي</p>
         <span class="feat-tag">ثنائي اللغة</span>
       </article>
 
       <article class="feat-card" role="listitem">
-        <div class="feat-icon" style="background:#E8F5E9;">📶</div>
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 20h.01m-9-17 18 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
         <h3>يعمل بدون إنترنت</h3>
-        <p>قاعدة البيانات كاملة متاحة Offline حتى في مناطق الاتصال الضعيف.</p>
+        <p>قاعدة البيانات كاملة متاحة Offline حتى في مناطق الاتصال الضعيف</p>
         <span class="feat-tag">Offline دائماً</span>
       </article>
 
       <article class="feat-card" role="listitem">
-        <div class="feat-icon" style="background:#FFF8E1;">🔄</div>
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.3-6.4L21 8" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 3v5h-5" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12a9 9 0 0 1-15.3 6.4L3 16" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 21v-5h5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
         <h3>تحديثات علمية</h3>
-        <p>فريق من الصيادلة المختصين يراجع المحتوى دورياً بأعلى المعايير العلمية.</p>
+        <p>فريق من الصيادلة المختصين يراجع المحتوى دورياً بأعلى المعايير العلمية</p>
         <span class="feat-tag">مراجعة دورية</span>
       </article>
 
@@ -184,26 +217,25 @@
   <section id="app-preview" class="section-pad preview-section">
     <div class="preview-inner">
       <div class="preview-text reveal">
-        <div class="section-tag" style="background:rgba(255,255,255,0.15);color:#fff;">📱 معاينة التطبيق</div>
-        <h2 class="section-title" style="color:#fff;">واجهة نظيفة<br/>وسهلة الاستخدام</h2>
-        <p class="preview-sub">صُمِّم ليكون بسيطاً وسريعاً — تصل لأي معلومة في ثوانٍ حتى في أوقات الضغط.</p>
+        <div class="section-tag">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18.5h2" stroke-linecap="round"/></svg>
+          معاينة التطبيق
+        </div>
+        <h2 class="section-title">واجهة نظيفة<br/>وسهلة الاستخدام</h2>
+        <p class="preview-sub">صُمِّم ليكون بسيطاً وسريعاً — تصل لأي معلومة في ثوانٍ حتى في أوقات الضغط</p>
         <ul class="preview-list">
-          <li><span class="check">✓</span> قاعدة بيانات للأدوية</li>
-          <li><span class="check">✓</span> أدوات سريعة بنقرة واحدة</li>
-          <li><span class="check">✓</span> دليل الأسعار التجاري الشامل</li>
-          <li><span class="check">✓</span> واجهة مستخدم تدعم العربية والإنجليزية</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg></span> قاعدة بيانات للأدوية</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg></span> أدوات سريعة بنقرة واحدة</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg></span> دليل الأسعار التجاري الشامل</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L19 7"/></svg></span> واجهة مستخدم تدعم العربية والإنجليزية</li>
         </ul>
       </div>
+      <!-- ★ الصورة الثانية: 390 × 844 px — assets/app-screenshot-2.png -->
       <div class="preview-phone-wrap reveal delay-2">
         <div class="preview-phone">
           <div class="preview-notch" aria-hidden="true"></div>
-          <!--
-            ★ هذا الإطار يعرض صورة ثانية مختلفة
-            ★ ارفع الصورة باسم: assets/app-screenshot-2.png
-            ★ الحجم الصحيح: 390 × 844 px
-          -->
           <img src="assets/app-screenshot-2.png" alt="واجهة التطبيق - شاشة ثانية" class="preview-img" loading="lazy"
-            onerror="this.style.display='none';this.parentElement.style.background='#166B61';" />
+            onerror="this.style.display='none';this.parentElement.style.background='#11524A';" />
         </div>
       </div>
     </div>
@@ -213,29 +245,40 @@
   <!-- ══ STATS ══ -->
   <section id="stats" class="section-pad">
     <div class="section-head text-c reveal">
-      <div class="section-tag">📊 في أرقام</div>
-      <h2 class="section-title">يثق بنا آلاف الصيادلة</h2>
+      <div class="section-tag">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke-linecap="round"/></svg>
+        التطبيق في أرقام
+      </div>
+      <h2 class="section-title">ما الذي يضمّه التطبيق</h2>
     </div>
     <div class="stats-grid">
       <div class="stat-card reveal delay-1">
-        <span class="stat-icon">👥</span>
-        <span class="stat-big" data-count="5000" data-suffix="+">0</span>
-        <span class="stat-desc">صيدلاني مُسجَّل</span>
+        <span class="stat-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 0-7.07a5 5 0 0 1 7.07 0l7 7a5 5 0 0 1 0 7.07a5 5 0 0 1-7.07 0Z" stroke-linecap="round" stroke-linejoin="round"/><path d="m7 10 7 7" stroke-linecap="round"/></svg>
+        </span>
+        <span class="stat-big" data-count="754" data-suffix="">0</span>
+        <span class="stat-desc">دواء في قاعدة البيانات</span>
       </div>
       <div class="stat-card reveal delay-2">
-        <span class="stat-icon">💊</span>
-        <span class="stat-big" data-count="3200" data-suffix="+">0</span>
-        <span class="stat-desc">دواء في القاعدة</span>
+        <span class="stat-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="stat-big" data-count="57" data-suffix="">0</span>
+        <span class="stat-desc">تداخلاً دوائياً مفحوصاً</span>
       </div>
       <div class="stat-card reveal delay-3">
-        <span class="stat-icon">⭐</span>
-        <span class="stat-big" data-count="4.9" data-suffix="/5">0</span>
-        <span class="stat-desc">متوسط التقييم</span>
+        <span class="stat-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h11M9 3v2c0 5-2.5 8-6 9" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 9c0 3 2.5 5.5 7 7" stroke-linecap="round" stroke-linejoin="round"/><path d="m12 21 4.5-10L21 21M14 17h5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="stat-big" data-count="2" data-suffix="">0</span>
+        <span class="stat-desc">لغة للبحث: عربي وإنجليزي</span>
       </div>
       <div class="stat-card reveal delay-4">
-        <span class="stat-icon">🗺️</span>
-        <span class="stat-big" data-count="18" data-suffix=" محافظة">0</span>
-        <span class="stat-desc">تغطية عراقية</span>
+        <span class="stat-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M12 9v12M3 13h18" stroke-linecap="round"/><path d="M12 9S10.5 3 7.5 3a2.5 2.5 0 0 0 0 6M12 9s1.5-6 4.5-6a2.5 2.5 0 0 1 0 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="stat-big" data-count="100" data-suffix="%">0</span>
+        <span class="stat-desc">مجاني بلا اشتراكات</span>
       </div>
     </div>
   </section>
@@ -245,15 +288,22 @@
   <section id="advertise" class="ads-banner reveal">
     <div class="ads-inner">
       <div class="ads-icon-wrap">
-        <div class="ads-icon">📣</div>
+        <div class="ads-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h3l6 4.5V6.5L7 11H4a1 1 0 0 0-1 1Z"/><path d="M17 9a4 4 0 0 1 0 6"/><path d="M19.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>
+        </div>
       </div>
       <div class="ads-text">
-        <div class="ads-tag">💡 فرصة إعلانية</div>
+        <div class="ads-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6V16h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3Z"/></svg>
+          فرصة إعلانية
+        </div>
         <h3>أعلن داخل تطبيق دليل الصيدلة العراقي</h3>
-        <p>منتجك أمام آلاف الصيادلة المهنيين في العراق · إعلان مستهدف وفعّال</p>
+        <p>منتجك أمام صيادلة العراق · إعلان مستهدف وفعّال</p>
       </div>
       <a href="#contact" class="ads-cta" id="ads-contact-btn">
-        <span class="ads-cta-icon">💬</span>
+        <span class="ads-cta-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L3 20.5l1.9-6.4A8 8 0 1 1 21 11.5Z"/></svg>
+        </span>
         تواصل معنا
       </a>
     </div>
@@ -263,7 +313,10 @@
   <!-- ══ HOW IT WORKS ══ -->
   <section id="how" class="section-pad how-section">
     <div class="section-head text-c reveal">
-      <div class="section-tag">🔧 خطوات بسيطة</div>
+      <div class="section-tag">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5a3.5 3.5 0 0 1 4.8-3.2l-2.6 2.6 1.9 1.9 2.6-2.6A3.5 3.5 0 0 1 18 9.5a3.5 3.5 0 0 1-1.4-.3L7 18.8a2.4 2.4 0 1 1-3.4-3.4l9.6-9.6a3.5 3.5 0 0 1-.7-2.1Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        خطوات بسيطة
+      </div>
       <h2 class="section-title">ابدأ في أقل من دقيقة</h2>
     </div>
     <div class="steps-list">
@@ -297,22 +350,19 @@
   <!-- ══ DIRECT APK DOWNLOAD ══ -->
   <section id="apk-download" class="apk-section reveal">
     <div class="apk-card">
-      <!-- Text -->
       <div class="apk-text">
         <h3>تنزيل التطبيق للأندرويد</h3>
-        <p>ثبّت نسخة الـ APK مباشرة على جهازك دون الحاجة لمتجر Google Play.</p>
+        <p>ثبّت نسخة الـ APK مباشرة على جهازك دون الحاجة لمتجر Google Play</p>
       </div>
 
-      <!-- Download Button -->
       <a href="https://github.com/urmuqa/iraq-pharma-guide/releases/download/v2.3.0/IraqPharmaGuide-2.3.0.apk"
          id="apk-dl-btn"
          class="apk-dl-btn"
          download="IraqPharmaGuide-2.3.0.apk"
          aria-label="تحميل تطبيق دليل الصيدلة العراقي لأندرويد">
         <span class="apk-dl-icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 4V16M12 16L8 12M12 16L16 12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4 20H20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 19h16"/>
           </svg>
         </span>
         <span class="apk-dl-txt">تنزيل ملف APK</span>
@@ -322,24 +372,27 @@
 
 
   <!-- ══ DOWNLOAD CTA ══ -->
-
   <section id="download" class="section-pad dl-section">
     <div class="dl-card reveal">
-      <div class="dl-emoji">🚀</div>
+      <div class="dl-emoji">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 14.6 8l6 .9-4.3 4.2 1 6-5.3-2.8L6.7 19l1-6L3.4 8.9 9.4 8Z"/></svg>
+      </div>
       <h2 class="dl-title">ابدأ مجاناً اليوم</h2>
       <p class="dl-sub">
-        انضم إلى أكثر من 5000 صيدلاني يثقون بدليل الصيدلة العراقي<br/>
-        التطبيق مجاني تماماً على جميع الأجهزة
+        التطبيق مجاني تماماً على أندرويد و iOS<br/>
+        بلا اشتراكات ولا مشتريات داخل التطبيق
       </p>
       <div class="dl-btns">
-        <!-- ★ Replace href="#" with your actual Google Play Store link -->
         <a href="https://play.google.com/store/apps/details?id=com.iraqpharmaguide.app" target="_blank" rel="noopener" id="dl-gplay" class="dl-btn dl-btn-primary">
-          <span class="dl-icon">▶</span>
+          <span class="dl-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8a1.5 1.5 0 0 0-.5 1.1v18.2c0 .45.19.86.5 1.1l10-10.2-10-10.2zm11.1 11.3 2.9 2.9-11 6.3 8.1-9.2zm0-2.2L6.6 1.7l11 6.3-2.9 2.9zM19 9.4l2.6 1.5c.9.5.9 1.7 0 2.2L19 14.6l-3.2-3.2L19 9.4z"/></svg>
+          </span>
           <span class="dl-txt"><small>تحميل مجاني من</small><strong>Google Play</strong></span>
         </a>
-        <!-- ★ Replace href="#" with your actual Apple App Store link -->
         <a href="https://apps.apple.com/app/id6800479716" target="_blank" rel="noopener" id="dl-appstore" class="dl-btn dl-btn-secondary">
-          <span class="dl-icon">&#xF8FF;</span>
+          <span class="dl-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85-.7 0-1.85-.83-3.05-.8-1.55.02-3 .9-3.8 2.3-1.65 2.85-.42 7.05 1.17 9.35.78 1.13 1.7 2.4 2.9 2.35 1.17-.05 1.6-.75 3.02-.75 1.4 0 1.8.75 3.03.73 1.25-.02 2.05-1.15 2.8-2.28.9-1.3 1.27-2.57 1.28-2.64-.03-.01-2.45-.94-2.47-3.74zM14.1 5.5c.63-.78 1.06-1.85.94-2.93-.9.04-2.02.6-2.68 1.38-.58.68-1.1 1.78-.96 2.83 1.01.08 2.05-.51 2.7-1.28z"/></svg>
+          </span>
           <span class="dl-txt"><small>متوفر على</small><strong>App Store</strong></span>
         </a>
       </div>
@@ -349,72 +402,99 @@
 
   <!-- ══ FOOTER ══ -->
   <footer id="contact">
-    <div class="footer-logo-wrap">
-      <img src="assets/logo.png" alt="دليل الصيدلة العراقي" class="footer-logo-img"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-      <span class="footer-logo-fb" style="display:none;">💊 دليل الصيدلة العراقي</span>
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="assets/logo.png" alt="دليل الصيدلة العراقي" class="footer-logo-img"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+          <span class="footer-logo-fb" style="display:none;">دليل الصيدلة العراقي</span>
+          <span class="footer-logo-name">دليل الصيدلة العراقي</span>
+        </div>
+        <p class="footer-desc">
+          مُصمم بعناية من قِبَل فريق من الصيادلة لخدمة الصيادلة في العراق
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">تواصل معنا</div>
+        <div class="footer-contact">
+          <a href="mailto:info@iraqpharmaguide.com" class="contact-row">
+            <span class="c-icon email-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            </span>
+            <span class="c-info">
+              <small>البريد الإلكتروني</small>
+              <span>info@iraqpharmaguide.com</span>
+            </span>
+          </a>
+
+          <!-- ★ WhatsApp — غيّر الرقم 9647861071077 عند الحاجة -->
+          <a href="https://wa.me/9647861071077" target="_blank" rel="noopener" class="contact-row">
+            <span class="c-icon wa-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </span>
+            <span class="c-info">
+              <small>واتساب</small>
+              <span dir="ltr">+964 786 107 1077</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">روابط سريعة</div>
+        <nav class="footer-nav" aria-label="روابط الموقع">
+          <a href="#hero">الرئيسية</a>
+          <a href="#features">المميزات</a>
+          <a href="#app-preview">معاينة التطبيق</a>
+          <a href="#stats">التطبيق في أرقام</a>
+          <a href="#apk-download">تنزيل APK</a>
+        </nav>
+      </div>
+
     </div>
 
-    <p class="footer-desc">
-      مُصمم بعناية من قِبَل فريق من الصيادلة لخدمة الصيادلة في العراق.
-    </p>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="./privacy-policy" id="fp-privacy">سياسة الخصوصية</a>
+        <span aria-hidden="true">·</span>
+        <a href="./terms" id="fp-terms">شروط الاستخدام</a>
+        <span aria-hidden="true">·</span>
+        <a href="./disclaimer" id="fp-disclaimer">إخلاء المسؤولية</a>
+      </div>
 
-    <div class="footer-contact">
-      <a href="mailto:info@iraqpharmaguide.com" class="contact-row">
-        <span class="c-icon email-icon">📧</span>
-        <span class="c-info">
-          <small>البريد الإلكتروني</small>
-          <span>info@iraqpharmaguide.com</span>
-        </span>
-      </a>
-
-      <!-- ★ WhatsApp — Replace the number 9647861071077 if needed -->
-      <a href="https://wa.me/9647861071077" target="_blank" rel="noopener" class="contact-row">
-        <span class="c-icon wa-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#25D366">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-        </span>
-        <span class="c-info">
-          <small>واتساب</small>
-          <span dir="ltr">+964 786 107 1077</span>
-        </span>
-      </a>
+      <p class="footer-copy">
+        &copy; <span id="yr"></span> دليل الصيدلة العراقي · جميع الحقوق محفوظة
+      </p>
     </div>
-
-    <div class="footer-legal">
-      <a href="./privacy-policy" id="fp-privacy">سياسة الخصوصية</a>
-      <span aria-hidden="true">·</span>
-      <a href="./terms" id="fp-terms">شروط الاستخدام</a>
-      <span aria-hidden="true">·</span>
-      <a href="./disclaimer" id="fp-disclaimer">إخلاء المسؤولية</a>
-    </div>
-
-    <p class="footer-copy">
-      &copy; <span id="yr"></span> دليل الصيدلة العراقي · جميع الحقوق محفوظة
-    </p>
   </footer>
 
 
   <!-- ══ STICKY BOTTOM BAR ══ -->
   <div id="stickyBar" class="sticky-bar">
-    <!-- ★ Replace href="#" with your actual Google Play Store link -->
     <a href="https://play.google.com/store/apps/details?id=com.iraqpharmaguide.app" target="_blank" rel="noopener" id="sb-gplay" class="sb-btn sb-primary">
-      <span class="sb-icon">▶</span>
+      <span class="sb-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 1.8a1.5 1.5 0 0 0-.5 1.1v18.2c0 .45.19.86.5 1.1l10-10.2-10-10.2zm11.1 11.3 2.9 2.9-11 6.3 8.1-9.2zm0-2.2L6.6 1.7l11 6.3-2.9 2.9zM19 9.4l2.6 1.5c.9.5.9 1.7 0 2.2L19 14.6l-3.2-3.2L19 9.4z"/></svg>
+      </span>
       <span class="sb-txt"><small>Google Play</small><strong>تحميل مجاني</strong></span>
     </a>
-    <!-- ★ Replace href="#" with your actual Apple App Store link -->
     <a href="https://apps.apple.com/app/id6800479716" target="_blank" rel="noopener" id="sb-appstore" class="sb-btn sb-secondary">
-      <span class="sb-icon">&#xF8FF;</span>
+      <span class="sb-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.15-2.8.85-3.5.85-.7 0-1.85-.83-3.05-.8-1.55.02-3 .9-3.8 2.3-1.65 2.85-.42 7.05 1.17 9.35.78 1.13 1.7 2.4 2.9 2.35 1.17-.05 1.6-.75 3.02-.75 1.4 0 1.8.75 3.03.73 1.25-.02 2.05-1.15 2.8-2.28.9-1.3 1.27-2.57 1.28-2.64-.03-.01-2.45-.94-2.47-3.74zM14.1 5.5c.63-.78 1.06-1.85.94-2.93-.9.04-2.02.6-2.68 1.38-.58.68-1.1 1.78-.96 2.83 1.01.08 2.05-.51 2.7-1.28z"/></svg>
+      </span>
       <span class="sb-txt"><small>App Store</small><strong>تحميل مجاني</strong></span>
     </a>
   </div>
 
-  <button id="scrollTop" aria-label="العودة للأعلى">↑</button>
-
+  <button id="scrollTop" aria-label="العودة للأعلى">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0-6 6m6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
 
 
   <!-- ══ SCRIPTS ══ -->
   <script src="script.js"></script>
 </body>
-  </html>
+</html>
