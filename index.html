@@ -13,7 +13,7 @@
   <meta property="og:title" content="دليل الصيدلة العراقي — المرجع الصيدلاني الموثوق" />
   <meta property="og:description" content="754 دواء موثّق · فحص التداخلات الدوائية · أدوات سريرية سريعة · يعمل بدون إنترنت" />
   <meta property="og:image" content="assets/app-screenshot.png" />
-  <link rel="icon" href="assets/logoweb.jpeg" type="image/jpeg" />
+  <link rel="icon" href="assets/logo-color.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -26,7 +26,7 @@
     <div class="header-inner">
 
       <a href="#hero" class="logo" aria-label="دليل الصيدلة العراقي">
-        <img src="assets/logo.png" alt="دليل الصيدلة العراقي" class="logo-img"
+        <img src="assets/logo-color.png" alt="دليل الصيدلة العراقي" class="logo-img"
           onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" />
         <span class="logo-fallback" style="display:none;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 0-7.07l0 0a5 5 0 0 1 7.07 0l7 7a5 5 0 0 1 0 7.07l0 0a5 5 0 0 1-7.07 0Z"/><path d="m7 10 7 7"/></svg>
@@ -105,7 +105,7 @@
       <div class="mockup-wrap reveal delay-2" aria-label="معاينة التطبيق">
         <div class="mockup-glow" aria-hidden="true"></div>
         <div class="mockup-phone">
-          <div class="mockup-notch" aria-hidden="true"></div>
+          <div class="mockup-status" aria-hidden="true"><span class="mockup-notch"></span></div>
           <img
             src="assets/app-screenshot.png"
             alt="لقطة شاشة من تطبيق دليل الصيدلة العراقي"
@@ -233,7 +233,7 @@
       <!-- ★ الصورة الثانية: 390 × 844 px — assets/app-screenshot-2.png -->
       <div class="preview-phone-wrap reveal delay-2">
         <div class="preview-phone">
-          <div class="preview-notch" aria-hidden="true"></div>
+          <div class="preview-status" aria-hidden="true"><span class="preview-notch"></span></div>
           <img src="assets/app-screenshot-2.png" alt="واجهة التطبيق - شاشة ثانية" class="preview-img" loading="lazy"
             onerror="this.style.display='none';this.parentElement.style.background='#11524A';" />
         </div>
@@ -298,7 +298,22 @@
           فرصة إعلانية
         </div>
         <h3>أعلن داخل تطبيق دليل الصيدلة العراقي</h3>
-        <p>منتجك أمام صيادلة العراق · إعلان مستهدف وفعّال</p>
+        <p>ضع منتجك أمام صيادلة العراق في اللحظة التي يبحثون فيها عن الدواء</p>
+
+        <ul class="ads-points">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/></svg>
+            جمهور مهني مستهدف بالكامل
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+            تقارير ظهور ونقرات شهرية
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.4"/><path d="m8.9 13.5-1.4 7.1 4.5-2.5 4.5 2.5-1.4-7.1"/></svg>
+            رعاية أقسام كاملة داخل التطبيق
+          </li>
+        </ul>
       </div>
       <a href="#contact" class="ads-cta" id="ads-contact-btn">
         <span class="ads-cta-icon">
@@ -375,7 +390,13 @@
   <section id="download" class="section-pad dl-section">
     <div class="dl-card reveal">
       <div class="dl-emoji">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 14.6 8l6 .9-4.3 4.2 1 6-5.3-2.8L6.7 19l1-6L3.4 8.9 9.4 8Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="5.4" y="2" width="13.2" height="20" rx="3.2"/>
+          <path d="M10.3 2.9h3.4"/>
+          <path d="M12 7.4v7.2"/>
+          <path d="m8.8 11.4 3.2 3.2 3.2-3.2"/>
+          <path d="M8.6 18.3h6.8"/>
+        </svg>
       </div>
       <h2 class="dl-title">ابدأ مجاناً اليوم</h2>
       <p class="dl-sub">
@@ -401,6 +422,25 @@
 
 
   <!-- ══ FOOTER ══ -->
+  <!-- ══ FOUNDER / SUPERVISION ══ -->
+  <section id="founder" class="founder-section reveal">
+    <div class="founder-card">
+      <div class="founder-avatar" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6 4.6 5.4v5.9c0 4.7 3.1 8.8 7.4 10.1 4.3-1.3 7.4-5.4 7.4-10.1V5.4Z"/><path d="M12 8.6v5.4M9.3 11.3h5.4"/></svg>
+      </div>
+      <div class="founder-body">
+        <div class="founder-tag">الإشراف العلمي</div>
+        <h3 class="founder-name">د. حميد عدنان حميد</h3>
+        <p class="founder-role">اختصاص صيدلة سريرية</p>
+        <p class="founder-org">جامعة المعارف · كلية الصيدلة</p>
+      </div>
+      <p class="founder-note">
+        مؤسس التطبيق والمشرف على مراجعة محتواه الدوائي
+      </p>
+    </div>
+  </section>
+
+
   <footer id="contact">
     <div class="footer-grid">
 
@@ -468,6 +508,7 @@
 
       <p class="footer-copy">
         &copy; <span id="yr"></span> دليل الصيدلة العراقي · جميع الحقوق محفوظة
+        <span class="footer-credit">إشراف علمي: د. حميد عدنان حميد — صيدلة سريرية</span>
       </p>
     </div>
   </footer>
