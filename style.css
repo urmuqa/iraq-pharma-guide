@@ -482,7 +482,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;-webkit-tap-h
 }
 .ads-cta:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,0,0,.2);}
 .ads-cta-icon{display:grid;place-items:center;}
-.ads-cta-icon svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.9;}
+.ads-cta-icon svg{width:20px;height:20px;fill:#25D366;stroke:none;}
 
 /* ============================================================
    FOUNDER / SCIENTIFIC SUPERVISION
@@ -686,8 +686,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;-webkit-tap-h
 .footer-legal a{font-size:.83rem;color:rgba(255,255,255,.62);transition:color var(--t);}
 .footer-legal a:hover{color:var(--teal-300);}
 .footer-legal span{color:rgba(255,255,255,.26);}
-.footer-copy{font-size:.79rem;color:rgba(255,255,255,.44);line-height:1.9;}
-.footer-credit{display:block;font-size:.77rem;color:rgba(255,255,255,.55);}
+.footer-copy{font-size:.79rem;color:rgba(255,255,255,.44);}
 
 /* ============================================================
    STICKY BOTTOM BAR
