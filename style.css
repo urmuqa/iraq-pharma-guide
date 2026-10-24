@@ -503,12 +503,12 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;-webkit-tap-h
   background:radial-gradient(circle,rgba(29,132,120,.08),transparent 68%);pointer-events:none;
 }
 .founder-avatar{
-  position:relative;z-index:1;width:92px;height:92px;flex:none;border-radius:50%;
-  padding:3px;background:var(--g-brand);box-shadow:var(--sh-teal);
+  position:relative;z-index:1;width:132px;flex:none;border-radius:26px;
+  padding:4px;background:var(--g-brand);box-shadow:var(--sh-teal);line-height:0;
 }
 .founder-avatar img{
-  width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 22%;
-  display:block;background:var(--teal-50);border:2px solid #fff;
+  width:100%;height:auto;border-radius:22px;
+  display:block;background:var(--teal-50);
 }
 .founder-body{position:relative;z-index:1;}
 .founder-tag{
